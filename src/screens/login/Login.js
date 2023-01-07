@@ -1,27 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import ScreenTemplate from '../../components/ScreenTemplate'
-import Button from '../../components/Button'
-import { useNavigate } from "react-router-dom";
 import { colors, fontSize } from "../../theme";
-import { config } from "../../config";
+import { UserContext } from "../../contexts/UserContext";
+import Button from '../../components/Button'
 
-export default function Detail() {
-  const navigate = useNavigate()
+export default function Login() {
+  const { setUser } = useContext(UserContext)
 
-  const onGoBack = () => {
-    navigate(-1)
+  const onLoginPress = () => {
+    const userData = {
+      id: 'user-1234',
+      userName: 'abcdef'
+    }
+    setUser(userData)
   }
+
   return (
     <ScreenTemplate>
       <View style={styles.container}>
-        <Text style={styles.label}>Detail</Text>
-        <Text style={styles.title}>{config.siteTitle}</Text>
+        <Text style={styles.label}>Login Screen</Text>
         <View style={{width: '50%'}}>
           <Button
-            label='Go Back'
-            onPress={onGoBack}
-            color={colors.deeppink}
+            label='Login'
+            onPress={onLoginPress}
+            color={colors.lightPurple}
             desable={false}
             labelColor={colors.white}
           />
@@ -42,7 +45,4 @@ const styles = StyleSheet.create({
     fontSize: fontSize.xxLarge,
     fontWeight: '500'
   },
-  title: {
-    fontSize: fontSize.large,
-  }
 })

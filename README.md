@@ -1,5 +1,9 @@
 # React Native Web Boilerplate
 
+## Screens
+
+<img src='https://github.com/kiyohken2000/react-native-web-boilerplate/blob/main/__DELELE_ME__/img1.jpg' width='80%'>
+
 ## Libraries
 
 - react
@@ -28,4 +32,17 @@ yarn install
 
 ```
 yarn start
+```
+
+## NOTES
+
+### Deploying app to the subfolder on server
+
+Adding publicPath to React Router's basename prop.
+
+**src\config.js**
+
+```javascript
+// e.g. basename='/path/to/subfolder/'
+const basename = ''
 ```

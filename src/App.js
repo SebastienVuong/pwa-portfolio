@@ -1,8 +1,14 @@
 import React from "react";
-import Navigation from './route/Navigation'
+import Routes from "./route/Routes";
+import { InitializeContextProvider } from './contexts/InitializeContext'
+import { UserContextProvider } from './contexts/UserContext'
 
 export default function App() {
   return (
-    <Navigation />
+    <InitializeContextProvider>
+      <UserContextProvider>
+        <Routes />
+      </UserContextProvider>
+    </InitializeContextProvider>
   )
 }
