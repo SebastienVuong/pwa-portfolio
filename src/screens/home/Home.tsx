@@ -1,38 +1,38 @@
 import React, { useContext } from "react";
 import { View, Text, StyleSheet } from "react-native";
-import ScreenTemplate from '../../components/ScreenTemplate'
-import Button from '../../components/Button'
+import ScreenTemplate from "../../components/ScreenTemplate";
+import Button from "../../components/Button";
 import { useNavigate } from "react-router-dom";
 import { colors, fontSize } from "../../theme";
-import { UserContext } from '../../contexts/UserContext'
+import { UserContext } from "../../contexts/UserContext";
 
 export default function Home() {
-  const navigate = useNavigate()
-  const { setUser } = useContext(UserContext)
+  const navigate = useNavigate();
+  const { setUser } = useContext(UserContext);
 
-  const onButtonPress = () => {
-    navigate('/detail')
-  }
+  const onButtonPress = (route: string) => {
+    navigate(route);
+  };
 
   const onLogoutPress = () => {
-    setUser('')
-  }
+    setUser(null);
+  };
 
   return (
     <ScreenTemplate>
       <View style={styles.container}>
         <Text style={styles.label}>Home</Text>
-        <View style={{width: '50%'}}>
+        <View style={{ width: "50%" }}>
           <Button
-            label='Go Detail'
-            onPress={onButtonPress}
+            label="Go Detail"
+            onPress={() => onButtonPress("/detail")}
             color={colors.lightPurple}
             desable={false}
             labelColor={colors.white}
           />
-          <View style={{paddingVertical: 10}} />
+          <View style={{ paddingVertical: 10 }} />
           <Button
-            label='Logout'
+            label="Logout"
             onPress={onLogoutPress}
             color={colors.aquamarine}
             desable={false}
@@ -41,18 +41,18 @@ export default function Home() {
         </View>
       </View>
     </ScreenTemplate>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: colors.white
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: colors.white,
   },
   label: {
     fontSize: fontSize.xxLarge,
-    fontWeight: '500'
-  }
-})
+    fontWeight: "500",
+  },
+});

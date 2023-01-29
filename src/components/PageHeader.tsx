@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { config } from "../config";
 
-export default function PageHeader() {
+export default () => {
   return (
     <div className="application">
       <Helmet>

@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Dimensions } from "react-native";
 
-export default function ScreenTemplate(props) {
+export default (props: any) => {
   return (
     <View style={styles.container}>
       {props.children}
