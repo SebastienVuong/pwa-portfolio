@@ -1,36 +1,40 @@
-import { IChildrenProp } from "children";
-import React, { createContext, useState } from "react";
+import { IChildrenProp } from 'children';
+import React, { createContext, useState } from 'react';
 
 export enum ViewModesEnum {
-  "DEV_MODE" = "DEV_MODE",
-  "SPORTS_MODE" = "SPORTS_MODE",
+  'DEV_MODE' = 'DEV_MODE',
+  'SPORTS_MODE' = 'SPORTS_MODE',
 }
 
 export interface IValidUser {
-  id: string
-  userName: string
-  viewMode: ViewModesEnum
+  id: string;
+  userName: string;
+  viewMode: ViewModesEnum;
 }
 
-export type TUser = IValidUser | null
+export type TUser = IValidUser | null;
 
 interface IUserContext {
-  user: TUser
-  setUser: (user: TUser) => void
+  user: TUser;
+  setUser: (user: TUser) => void;
 }
 
-export const UserContext = createContext<IUserContext>({ user: null, setUser: (user: TUser) => { } });
+export const UserContext = createContext<IUserContext>({
+  user: null,
+  setUser: (user: TUser) => {},
+});
 
 export const UserContextProvider = ({ children }: IChildrenProp) => {
-  const [user, setUser] = useState<TUser>(null)
+  const [user, setUser] = useState<TUser>(null);
 
   return (
     <UserContext.Provider
       value={{
-        user, setUser
+        user,
+        setUser,
       }}
     >
       {children}
     </UserContext.Provider>
-  )
-}
+  );
+};

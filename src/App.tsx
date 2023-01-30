@@ -1,7 +1,7 @@
-import React from "react";
-import Routes from "./route/Routes";
-import { InitializeContextProvider } from './contexts/InitializeContext'
-import { UserContextProvider } from './contexts/UserContext'
+import React from 'react';
+import Routes from './route/Routes';
+import { InitializeContextProvider } from './contexts/InitializeContext';
+import { UserContextProvider } from './contexts/UserContext';
 
 export default function App() {
   return (
@@ -10,5 +10,5 @@ export default function App() {
         <Routes />
       </UserContextProvider>
     </InitializeContextProvider>
-  )
+  );
 }

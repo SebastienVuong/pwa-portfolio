@@ -1,4 +1,4 @@
-import { colors } from './colors'
-import { fontSize } from "./fontSize";
+import { colors } from './colors';
+import { fontSize } from './fontSize';
 
-export { colors, fontSize }
+export { colors, fontSize };

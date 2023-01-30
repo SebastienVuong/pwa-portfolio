@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import { View, Text, StyleSheet } from "react-native";
-import ScreenTemplate from "../../components/ScreenTemplate";
-import Button from "../../components/Button";
-import { useNavigate } from "react-router-dom";
-import { colors, fontSize } from "../../theme";
-import { UserContext } from "../../contexts/UserContext";
+import React, { useContext } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import ScreenTemplate from '../../components/ScreenTemplate';
+import Button from '../../components/Button';
+import { useNavigate } from 'react-router-dom';
+import { colors, fontSize } from '../../theme';
+import { UserContext } from '../../contexts/UserContext';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -22,10 +22,10 @@ export default function Home() {
     <ScreenTemplate>
       <View style={styles.container}>
         <Text style={styles.label}>Home</Text>
-        <View style={{ width: "50%" }}>
+        <View style={{ width: '50%' }}>
           <Button
             label="Go Detail"
-            onPress={() => onButtonPress("/detail")}
+            onPress={() => onButtonPress('/detail')}
             color={colors.lightPurple}
             desable={false}
             labelColor={colors.white}
@@ -47,12 +47,12 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: colors.white,
   },
   label: {
     fontSize: fontSize.xxLarge,
-    fontWeight: "500",
+    fontWeight: '500',
   },
 });

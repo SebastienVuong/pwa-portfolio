@@ -1,6 +1,6 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import { config } from "../config";
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { config } from '../config';
 
 export default () => {
   return (
@@ -11,5 +11,5 @@ export default () => {
         <link rel="canonical" href={config.siteUrl} />
       </Helmet>
     </div>
-  )
-}
+  );
+};

@@ -1,32 +1,31 @@
-import React from 'react'
+import React from 'react';
 
 type TContextValue<T> = {
   value?: T;
-  setValue: (value: T) => void
-}
+  setValue: (value: T) => void;
+};
 
-const createContext = <T>(initialValue: T) =>
+const createContext = <T,>(initialValue: T) =>
   React.createContext<TContextValue<T>>({
-    value: initialValue, 
-    setValue: (value: T) => { } 
-  })
+    value: initialValue,
+    setValue: (value: T) => {},
+  });
 
-    export const useContextValue = <T>(context: React.Context<ContextValue<T>>) => {
-  const {value, setValue} = React.useContext(context);
+export const useContextValue = <T,>(context: React.Context<ContextValue<T>>) => {
+  const { value, setValue } = React.useContext(context);
 
-      return {value, setValue};
+  return { value, setValue };
 };
 
-      export const createContextWithType = <T>(initialValue: T) => {
+export const createContextWithType = <T,>(initialValue: T) => {
   const Context = createContext<T>(initialValue);
-          type ContextType = ContextValue<T>;
+  type ContextType = ContextValue<T>;
 
-            return {Context, ContextType};
+  return { Context, ContextType };
 };
 
-
-
-            {/* interface User {
+{
+  /* interface User {
   name: string;
 }
 
@@ -66,4 +65,5 @@ const App: React.FC = () => {
   );
 };
 
-export default App; */}
+export default App; */
+}

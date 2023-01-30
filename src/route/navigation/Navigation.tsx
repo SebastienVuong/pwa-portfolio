@@ -1,8 +1,8 @@
-import React from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { basename } from "../../config";
-import Home from "../../screens/home/Home";
-import Detail from "../../screens/detail/Detail";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { basename } from '../../config';
+import Home from '../../screens/home/Home';
+import Detail from '../../screens/detail/Detail';
 
 export default function Navigation() {
   return (

@@ -5,6 +5,6 @@ const fontSize = {
   large: 17,
   middle: 14,
   small: 12,
-}
+};
 
-export { fontSize }
+export { fontSize };

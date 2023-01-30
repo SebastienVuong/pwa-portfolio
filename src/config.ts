@@ -1,8 +1,8 @@
 const config = {
-  siteTitle: "My React App",
-  siteUrl: "https://www.yahoo.co.jp",
+  siteTitle: 'My React App',
+  siteUrl: 'https://www.yahoo.co.jp',
 };
 
-const basename = "";
+const basename = '';
 
 export { config, basename };

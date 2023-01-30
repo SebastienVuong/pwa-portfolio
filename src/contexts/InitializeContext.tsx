@@ -1,13 +1,14 @@
-import { IChildrenProp } from "children";
-import React, { createContext, useState } from "react";
+import { IChildrenProp } from 'children';
+import React, { createContext, useState } from 'react';
 
 interface IInitializeContext {
-  isInitialized: boolean
-  setIsInitialized: (isInitialized: boolean) => void
+  isInitialized: boolean;
+  setIsInitialized: (isInitialized: boolean) => void;
 }
 
 export const InitializeContext = createContext<IInitializeContext>({
-  isInitialized: false, setIsInitialized: (isInitialized: boolean) => { }
+  isInitialized: false,
+  setIsInitialized: (isInitialized: boolean) => {},
 });
 
 export const InitializeContextProvider = ({ children }: IChildrenProp) => {
@@ -20,7 +21,6 @@ export const InitializeContextProvider = ({ children }: IChildrenProp) => {
         setIsInitialized,
       }}
     >
-
       {children}
     </InitializeContext.Provider>
   );
