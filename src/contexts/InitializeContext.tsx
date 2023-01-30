@@ -10,7 +10,6 @@ export const InitializeContext = createContext<IInitializeContext>({
   isInitialized: false, setIsInitialized: (isInitialized: boolean) => { }
 });
 
-
 export const InitializeContextProvider = ({ children }: IChildrenProp) => {
   const [isInitialized, setIsInitialized] = useState(false);
 
@@ -21,6 +20,7 @@ export const InitializeContextProvider = ({ children }: IChildrenProp) => {
         setIsInitialized,
       }}
     >
+
       {children}
     </InitializeContext.Provider>
   );

@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ViewComponent } from "react-native";
 import ScreenTemplate from '../../components/ScreenTemplate'
 import { colors, fontSize } from "../../theme";
 import { InitializeContext } from '../../contexts/InitializeContext'
-import { UserContext } from "../../contexts/UserContext";
+import { TUser, UserContext, ViewModesEnum } from "../../contexts/UserContext";
 
 export default function Initialize() {
   const { setIsInitialized } = useContext(InitializeContext)
@@ -11,12 +11,13 @@ export default function Initialize() {
 
   useEffect(() => {
     try {
-      const userData = {
+      const userData: TUser = {
         id: 'user-1234',
-        userName: 'abcdef'
+        userName: 'abcdef',
+        viewMode: ViewModesEnum.DEV_MODE
       }
       setUser(userData)
-    } catch(e) {
+    } catch (e) {
       console.log(e)
     } finally {
       setIsInitialized(true)

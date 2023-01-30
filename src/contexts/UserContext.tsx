@@ -1,12 +1,18 @@
 import { IChildrenProp } from "children";
 import React, { createContext, useState } from "react";
 
-interface IValidUser {
-  id: string
-  userName: string
+export enum ViewModesEnum {
+  "DEV_MODE" = "DEV_MODE",
+  "SPORTS_MODE" = "SPORTS_MODE",
 }
 
-type TUser = IValidUser | null
+export interface IValidUser {
+  id: string
+  userName: string
+  viewMode: ViewModesEnum
+}
+
+export type TUser = IValidUser | null
 
 interface IUserContext {
   user: TUser
